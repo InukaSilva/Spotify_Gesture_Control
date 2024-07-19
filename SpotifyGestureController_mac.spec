@@ -1,5 +1,8 @@
 # -*- mode: python ; coding: utf-8 -*-
 
+import os
+from PyInstaller.utils.hooks import copy_metadata
+
 a = Analysis(
     ['main.py'],
     pathex=[],
@@ -13,7 +16,8 @@ a = Analysis(
     noarchive=False,
     optimize=0,
 )
-pyz = PYZ(a.pure)
+
+pyz = PYZ(a.pure, a.zipped_data, cipher=block_cipher)
 
 exe = EXE(
     pyz,
