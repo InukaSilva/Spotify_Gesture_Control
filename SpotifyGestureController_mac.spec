@@ -45,10 +45,11 @@ app = BUNDLE(
     icon=None,
     bundle_identifier=None,
     info_plist={
+        'LSMinimumSystemVersion': '14.0.0',
         'CFBundleName': 'SpotifyGestureController',
         'CFBundleIdentifier': 'com.example.spotifygesturecontroller',
         'CFBundleVersion': '1.0.0',
-        'CFBundleExecutable': 'SpotifyGestureController',
+        'CFBundleExecutable': 'SpotifyGestureController'
     },
     contains=[
         (a.pure, a.zipped_data)
