@@ -1,7 +1,0 @@
-0 Pause/Play
-1 Idle
-2 Mute/Unmute
-3 VolumeUp
-4 VolumeDown
-5 Next
-6 Previous
