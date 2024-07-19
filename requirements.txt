@@ -1,2 +1,5 @@
+psutil
 mediapipe==0.10.14
-PyInstaller
+opencv-python
+pynput
+customtkinter
