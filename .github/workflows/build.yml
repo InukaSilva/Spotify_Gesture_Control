@@ -16,8 +16,16 @@ jobs:
           python -m pip install --upgrade pip
           pip install pyinstaller
           pip install -r requirements.txt
+      - name: Clean build directories
+        run: |
+          if (Test-Path -Path build) { Remove-Item -Recurse -Force build }
+          if (Test-Path -Path dist) { Remove-Item -Recurse -Force dist }
       - name: Build executable
         run: pyinstaller SpotifyGestureController.spec
+      - name: Copy additional files
+        run: |
+          Copy-Item -Path .\Gesture_Control.task -Destination .\dist\ -Force
+          Copy-Item -Path .\Tutorial.png -Destination .\dist\ -Force
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
@@ -37,8 +45,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install pyinstaller
           pip install -r requirements.txt
+      - name: Clean build directories
+        run: rm -rf build dist
       - name: Build executable
         run: pyinstaller SpotifyGestureController.spec
+      - name: Copy additional files
+        run: |
+          cp Gesture_Control.task dist/
+          cp Tutorial.png dist/
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
@@ -58,8 +72,14 @@ jobs:
           python -m pip install --upgrade pip
           pip install pyinstaller
           pip install -r requirements.txt
+      - name: Clean build directories
+        run: rm -rf build dist
       - name: Build executable
         run: pyinstaller SpotifyGestureController.spec
+      - name: Copy additional files
+        run: |
+          cp Gesture_Control.task dist/
+          cp Tutorial.png dist/
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
