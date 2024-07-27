@@ -9,3 +9,5 @@
 ## Using the program
 - Program must be allowed to use the camera on the computer
 - Run the Spotify desktop app while running the program
+
+[Demo/Tutorial](https://youtu.be/Ogo6LdO9GdY)
